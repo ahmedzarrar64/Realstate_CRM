@@ -1,0 +1,180 @@
+/* Custom styles for Real Estate CRM */
+
+/* General styles */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    font-weight: 600;
+}
+
+/* Dashboard stats cards */
+.stats-card {
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+}
+
+.stats-card .card-body {
+    padding: 1.5rem;
+}
+
+.stats-card .stats-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #0d6efd;
+}
+
+.stats-card .stats-number {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stats-card .stats-label {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+/* Table styles */
+.table-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.table thead th {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+/* Form styles */
+.form-control:focus, .form-select:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.required-field::after {
+    content: " *";
+    color: #dc3545;
+}
+
+/* Timeline for contact logs */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: #dee2e6;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -34px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #0d6efd;
+    border: 2px solid #fff;
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+/* Task status badges */
+.badge-pending {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.badge-done {
+    background-color: #198754;
+    color: #fff;
+}
+
+/* Property status badges */
+.badge-available {
+    background-color: #198754;
+    color: #fff;
+}
+
+.badge-negotiation {
+    background-color: #0dcaf0;
+    color: #212529;
+}
+
+.badge-sold {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .stats-card .stats-number {
+        font-size: 1.5rem;
+    }
+    
+    .stats-card .stats-icon {
+        font-size: 2rem;
+    }
+}
+
+/* Notification badge for tasks */
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    padding: 3px 6px;
+    border-radius: 50%;
+    background-color: #dc3545;
+    color: white;
+    font-size: 0.75rem;
+}
+
+/* Export button */
+.btn-export {
+    margin-bottom: 1rem;
+}
+
+/* Search and filter container */
+.search-filter-container {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,69 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Prevent directory listing
+Options -Indexes
+
+# Protect .htaccess file
+<Files .htaccess>
+Order Allow,Deny
+Deny from all
+</Files>
+
+# Protect config.php file
+<Files config.php>
+Order Allow,Deny
+Deny from all
+</Files>
+
+# Protect backup files
+<FilesMatch "\.(bak|sql|gz|tar|zip)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+
+# Redirect to login page if not logged in
+# This is handled by PHP session checks in each file
+
+# Custom error pages
+ErrorDocument 404 /realState/404.php
+ErrorDocument 403 /realState/403.php
+
+# Set default character set
+AddDefaultCharset UTF-8
+
+# Set timezone
+SetEnv TZ America/New_York
+
+# PHP settings
+<IfModule mod_php7.c>
+    php_value upload_max_filesize 10M
+    php_value post_max_size 10M
+    php_value max_execution_time 300
+    php_value max_input_time 300
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Cache control
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+    ExpiresByType application/x-shockwave-flash "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresDefault "access plus 2 days"
+</IfModule>
